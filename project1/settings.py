@@ -55,7 +55,7 @@ ROOT_URLCONF = 'project1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
+        'DIRS': [                       #directory telling that there is a folder named tempaltes
             BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,
