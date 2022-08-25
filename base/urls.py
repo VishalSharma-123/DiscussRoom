@@ -3,6 +3,9 @@ from . import views
 
 urlpatterns = [
     #name here is an alternateive for the url, cna access by the same name
+    path('login/', views.loginPage, name = "login"),
+    path('logout/', views.logoutUser, name = "logout"),
+    
     path('', views.home, name = "home"),                
     path('room/<str:pk>/', views.rooms, name = "room" ),
     path('create-room/', views.createRoom, name = "create-room"),
