@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<!-- csrf token is a random secure token used to prevent csrf attacks -->
+<!-- {{form}} creates data field from form context, form.as_p adds thode fields in p tag -->
+<div>
+    <form method = "POST" action = "">
+        {% csrf_token %}
+        {{form.as_p}}                           
+
+        <input type = "Submit" value = "Submit">
+    </form>
+</div>
+
+{% endblock content %}

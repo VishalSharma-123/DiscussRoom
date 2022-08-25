@@ -18,13 +18,17 @@ class Room(models.Model):
     upated = models.DateTimeField(auto_now=True)                        #every save timestamp
     created = models.DateTimeField(auto_now_add=True)                   #first save timestamp
     
+    class Meta:
+        ordering = ['-upated', '-created']                              #order by date upadted, then by created 
+        
+    
     def __str__(self):
         return self.name
     
     
 class Message(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    room = models.ForeignKey(Room, on_delete = models.CASCADE)       #models.SET_NULL = message will stay stay in db, CASCADe deletes everythin
+    room = models.ForeignKey(Room, on_delete = models.CASCADE)          #models.SET_NULL = message will stay stay in db, CASCADe deletes everythin
     body = models.TextField()
     upated = models.DateTimeField(auto_now=True)                        
     created = models.DateTimeField(auto_now_add=True)
